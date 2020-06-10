@@ -65,7 +65,7 @@ public class Person {
         String sexWoman = "Woman";
 
         return "Name = '" + name + '\'' +
-                ", sex = " + man +
+                ", sex = " + ((man) ? sexMan : sexWoman) +
                 ", spouse on = {" + spouseOn + "}";
     }
 
