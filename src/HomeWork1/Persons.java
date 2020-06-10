@@ -8,15 +8,22 @@ public class Persons {
         Person mary = new Person(false, "Mary");
 
         System.out.println("Изначально имеем 4 персоны:");
-        System.out.println(sergey.toString());
-        System.out.println(andrey.toString());
-        System.out.println(alexandra.toString());
-        System.out.println(mary.toString());
+        System.out.println(sergey.info());
+        System.out.println(andrey.info());
+        System.out.println(alexandra.info());
+        System.out.println(mary.info());
 
-        System.out.println("Пытаемся поженить м/ж");
+        System.out.println("\nПытаемся поженить м/ж");
         sergey.marry(alexandra);
-        System.out.println(sergey.toString());
-        System.out.println(alexandra.toString());
+        System.out.println(sergey.info());
+        System.out.println(alexandra.info());
+
+        System.out.println("\nПытаемся поженить женатого на другой женщине");
+        sergey.marry(mary);
+        System.out.println(sergey.info());
+        System.out.println(mary.info());
+        System.out.println(alexandra.info());
+
 
     }
 }

@@ -4,7 +4,7 @@ package HomeWork1;
 public class Person {
     private final boolean man;
     private final String name;
-    private Person spouseOn;
+    private String spouseOn;
 
     public Person(boolean man, String name) {
         this.man = man;
@@ -24,10 +24,21 @@ public class Person {
     public boolean marry(Person person) {
         boolean marryed = false;
 
+        //если пол не равен пытаемся поженить
         if(this.man != person.man) {
+
+            //Если у одного из них есть другой супруг - оформляем развод
+            if(this.spouseOn != null)
+                this.divorce();
+            if(person.spouseOn != null)
+                person.divorce();
+
+            //женим
             marryed = true;
-            this.spouseOn = person;
+            this.spouseOn = person.name;
+            person.spouseOn = this.name;
         }
+
 
 
 
@@ -49,14 +60,15 @@ public class Person {
             return false;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "man=" + man +
-                ", name='" + name + '\'' +
-                ", spouse=" + spouseOn +
-                '}';
+    public String info(){
+        String sexMan = "Man";
+        String sexWoman = "Woman";
+
+        return "Name = '" + name + '\'' +
+                ", sex = " + man +
+                ", spouse on = {" + spouseOn + "}";
     }
+
 }
 
 
