@@ -24,6 +24,20 @@ public class Persons {
         System.out.println(mary.info());
         System.out.println(alexandra.info());
 
+        System.out.println("\nДля начала разведем всех для наглядности");
+        sergey.divorce();
+        andrey.divorce();
+        alexandra.divorce();
+        mary.divorce();
+
+        System.out.println("\nПытаемся поженить людей одного пола ");
+        sergey.marry(andrey);
+        alexandra.marry(mary);
+        System.out.println(sergey.info());
+        System.out.println(andrey.info());
+        System.out.println(alexandra.info());
+        System.out.println(mary.info());
+
 
     }
 }

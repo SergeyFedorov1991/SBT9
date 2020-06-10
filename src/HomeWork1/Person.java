@@ -27,7 +27,8 @@ public class Person {
         //если пол не равен пытаемся поженить
         if(this.man != person.man) {
 
-            //Если у одного из них есть другой супруг - оформляем развод на себя и бывщего супруга
+            //Если у одного из них есть другой супруг - оформляем развод сначала на супруга(пока есть на нее ссылка)
+            // затем на себя
             if(this.spouseOn != null) {
                 this.spouseOn.divorce();
                 this.divorce();
@@ -42,10 +43,6 @@ public class Person {
             this.spouseOn = person;
             person.spouseOn = this;
         }
-
-
-
-
 
         return marryed;
     }
