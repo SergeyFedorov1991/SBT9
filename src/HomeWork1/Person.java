@@ -38,11 +38,13 @@ public class Person {
     }
 
     public boolean divorce(){
+        boolean isDivorce = false;
         if(this.spouse != null) {
             this.spouse = null;
-            return true;
-        } else
-            return false;
+            isDivorce = true;
+        }
+
+        return isDivorce;
     }
 
     public String info(){
