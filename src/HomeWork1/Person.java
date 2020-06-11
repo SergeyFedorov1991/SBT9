@@ -1,6 +1,5 @@
 package HomeWork1;
 
-
 public class Person {
     private final boolean man;
     private final String name;
@@ -43,7 +42,6 @@ public class Person {
             this.spouse = null;
             isDivorce = true;
         }
-
         return isDivorce;
     }
 
