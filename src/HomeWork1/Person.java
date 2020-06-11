@@ -4,7 +4,7 @@ package HomeWork1;
 public class Person {
     private final boolean man;
     private final String name;
-    private Person spouseOn;
+    private Person spouse;
 
     public Person(boolean man, String name) {
         this.man = man;
@@ -19,27 +19,27 @@ public class Person {
 
             //Если у одного из них есть другой супруг - оформляем развод сначала на супруга(пока есть на нее ссылка)
             // затем на себя
-            if(this.spouseOn != null) {
-                this.spouseOn.divorce();
+            if(this.spouse != null) {
+                this.spouse.divorce();
                 this.divorce();
             }
-            if(person.spouseOn != null) {
-                person.spouseOn.divorce();
+            if(person.spouse != null) {
+                person.spouse.divorce();
                 person.divorce();
             }
 
             //женим
             marryed = true;
-            this.spouseOn = person;
-            person.spouseOn = this;
+            this.spouse = person;
+            person.spouse = this;
         }
 
         return marryed;
     }
 
     public boolean divorce(){
-        if(this.spouseOn != null) {
-            this.spouseOn = null;
+        if(this.spouse != null) {
+            this.spouse = null;
             return true;
         } else
             return false;
@@ -51,7 +51,7 @@ public class Person {
 
         return "Name = '" + name + '\'' +
                 ", sex = " + ((man) ? sexMan : sexWoman) +
-                ", spouse on = {" + spouseOn + "}";
+                ", spouse on = {" + spouse + "}";
     }
 
 }

@@ -1,6 +1,6 @@
 package HomeWork1;
 
-public class Persons {
+public class MainClass {
     public static void main(String[] args) {
         Person sergey = new Person(true, "Sergey");
         Person andrey = new Person(true, "Andrey");
