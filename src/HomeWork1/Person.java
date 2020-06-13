@@ -11,7 +11,7 @@ public class Person {
     }
 
     public boolean marry(Person person) {
-        boolean marryed = false;
+        boolean marred = false;
 
         //если пол не равен пытаемся поженить
         if(this.man != person.man) {
@@ -28,12 +28,12 @@ public class Person {
             }
 
             //женим
-            marryed = true;
+            marred = true;
             this.spouse = person;
             person.spouse = this;
         }
 
-        return marryed;
+        return marred;
     }
 
     public boolean divorce(){
