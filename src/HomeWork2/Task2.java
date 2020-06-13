@@ -14,32 +14,22 @@ public class Task2 {
         try (Scanner scanner = new Scanner(textFile)) {
             String[] words = null;
 
-
             while (scanner.hasNext()){
                 words = scanner.nextLine().split("\\s+");
                 List<String> stringList = new ArrayList<>(Arrays.asList(words));
-                stringList.sort(new StringComparator());
+
+                stringList.sort((s1, s2) -> {
+                    if(s1.length() != s2.length())
+                        return s1.length() - s2.length();
+                    else
+                        return s1.compareTo(s2);
+                });
+
                 System.out.println(stringList);
             }
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
 }
-
-class StringComparator implements Comparator<String>{
-
-    @Override
-    public int compare(String o1, String o2) {
-        if(o1.length() > o2.length())
-            return 1;
-        else if(o1.length() < o2.length())
-            return -1;
-        else
-            return 0;
-    }
-}
-
