@@ -2,9 +2,7 @@ package HomeWork2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 //Задание 1: Подсчитайте количество различных слов в файле.
 public class Task1 {
@@ -12,8 +10,8 @@ public class Task1 {
 
         File textFile = new File("src/HomeWork2/words.txt");
         try (Scanner scanner = new Scanner(textFile)) {
-            String[] words = scanner.nextLine().split("\\s+");
-
+            String[] words = null;
+            words = scanner.nextLine().split("\\s+");
             wordsCount(words);
 
         } catch (FileNotFoundException e) {
