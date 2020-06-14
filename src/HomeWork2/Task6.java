@@ -8,7 +8,11 @@ import java.util.*;
 public class Task6 {
     public static void main(String[] args) {
         File textFile = new File("src/HomeWork2/words.txt");
-        try (Scanner scanner = new Scanner(textFile)) {
+        try (Scanner scanner = new Scanner(textFile);
+             Scanner input   = new Scanner(System.in)) {
+
+            System.out.println("Введите номера строк для вывода: ");
+            String[] showLines = input.nextLine().split("\\s");
 
             List<String> lines = new ArrayList<>();
 
@@ -16,14 +20,9 @@ public class Task6 {
                 lines.add(scanner.nextLine());
             }
 
-            int[] showLines = {1, 1, 3};
-
-            for (int i : showLines) {
-                System.out.println(lines.get(i - 1));
+            for (String i : showLines) {
+                System.out.println(lines.get(Integer.parseInt(i) - 1));
             }
-
-
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
