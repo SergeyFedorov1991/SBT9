@@ -10,6 +10,7 @@ public class Task5 {
 
         try (Scanner scanner = new Scanner(new File("src/HomeWork2/words.txt"))) {
 
+
             List<String> list = new ArrayList<>();
             while ( scanner.hasNext() ) {
                 list.add(scanner.nextLine());
