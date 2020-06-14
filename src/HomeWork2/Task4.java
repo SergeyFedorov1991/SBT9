@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//Задание 4: Выведите на экран все строки файла в обратном порядке.
 public class Task4 {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(new File("src/HomeWork2/words.txt"))) {
