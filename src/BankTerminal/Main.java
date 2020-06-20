@@ -5,10 +5,15 @@ public class Main {
         TerminalImpl terminal = new TerminalImpl();
 
         terminal.showBalance();
-        terminal.takeMoney(-30);
-        terminal.toDeposit(60);
+
+        terminal.toDeposit(100);
         terminal.showBalance();
 
+        terminal.takeMoney(30);
+        terminal.showBalance();
+
+        terminal.toDeposit(60);
+        terminal.showBalance();
 
 
     }
