@@ -12,11 +12,14 @@ public class TerminalImpl implements Terminal {
 
     @Override
     public void takeMoney(double money) {
-        if (balance >= money){
+
+        if (balance >= money && money >= 0){
             balance -= money;
+            System.out.println("Выдача: " + money);
         } else
-            System.out.println("Недостаточно средств");
-        System.out.println("Выдача: " + money);
+            throw new IllegalArgumentException("Недостаточно средств");
+
+
     }
 
     @Override

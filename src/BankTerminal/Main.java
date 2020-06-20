@@ -5,9 +5,11 @@ public class Main {
         TerminalImpl terminal = new TerminalImpl();
 
         terminal.showBalance();
-        terminal.takeMoney(30);
+        terminal.takeMoney(-30);
         terminal.depositMoney(60);
         terminal.showBalance();
+
+
 
     }
 }

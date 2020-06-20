@@ -19,44 +19,38 @@ public class ReadContent {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String url;
 
-        do {
-            System.out.print("URL: > ");
-            url = scanner.nextLine();
+        System.out.print("URL: > ");
 
-        } while (readContent(url)); // только тут в случае некорректного url вылетает Exception и программа вылетает.
+        while (true){
+            String url = scanner.nextLine();
 
+            try {
+                readContent(url);
+                break;
 
-
-    }
-
-    private static boolean readContent(String url){
-        boolean isNotExist = true;
-        URL inputURL = null;
-
-        try {
-            inputURL = new URL(url);
-        } catch (MalformedURLException e) {
-            System.out.println("Неправильно введен адрес");
-        }
-
-        assert inputURL != null;
-        try {
-            BufferedReader bf = new BufferedReader(new InputStreamReader(inputURL.openStream()));
-            String inputLine;
-            while ((inputLine = bf.readLine()) != null) {
-                System.out.println(inputLine);
+            } catch (MalformedURLException e) {
+                System.out.println("Неверный формат URL! Повторите ввод:");
+                System.out.print("URL: > ");
+            } catch (UnknownHostException e) {
+                System.out.println("Хост недоступен");
+                System.out.print("URL: > ");
+            } catch (IOException e) {
+                System.out.println("Ошибка соединения! Введите другой адрес:");
+                System.out.print("URL: > ");
             }
-            isNotExist = false;
 
-        } catch (UnknownHostException e){
-            System.out.println("Хост недоступен");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
-        return isNotExist;
     }
 
+    private static void readContent(String url) throws IOException{
+        URL inputURL =  new URL(url);
+        BufferedReader bf = new BufferedReader(new InputStreamReader(inputURL.openStream()));
+        String inputLine;
+
+        while ((inputLine = bf.readLine()) != null) {
+                System.out.println(inputLine);
+        }
+    }
 }
