@@ -3,12 +3,12 @@ package BankTerminal;
 public interface Terminal {
 
     //Проверить состояние счета
-    double showBalance();
+    double showBalance() throws TerminalException;
 
     //Снять деньги
-    void takeMoney(double money);
+    void takeMoney(double money) throws TerminalException;
 
     //Положить деньги
-    void depositMoney(double money);
+    void toDeposit(double money) throws TerminalException;
 
 }

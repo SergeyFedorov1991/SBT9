@@ -6,7 +6,7 @@ public class Main {
 
         terminal.showBalance();
         terminal.takeMoney(-30);
-        terminal.depositMoney(60);
+        terminal.toDeposit(60);
         terminal.showBalance();
 
 

@@ -1,6 +1,5 @@
-package HomeWork4;
+package Collections;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class CollectionUtils {

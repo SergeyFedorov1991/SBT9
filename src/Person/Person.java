@@ -1,4 +1,4 @@
-package HomeWork1;
+package Person;
 
 public class Person {
     private final boolean man;

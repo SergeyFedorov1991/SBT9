@@ -1,4 +1,4 @@
-package HomeWork3;
+package CountMap;
 
 import java.util.Map;
 

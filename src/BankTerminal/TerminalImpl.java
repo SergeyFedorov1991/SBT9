@@ -2,30 +2,28 @@ package BankTerminal;
 
 
 public class TerminalImpl implements Terminal {
-    private double balance = 100.0;
+    private final TerminalServer server;
+    private final PinValidator pinValidator;
+
+    public TerminalImpl() {
+        this.server = new TerminalServer();
+        this.pinValidator = new PinValidator();
+    }
+
 
     @Override
     public double showBalance() {
-        System.out.println("Баланс: " + balance);
-        return balance;
+        return server.showBalance();
     }
 
     @Override
     public void takeMoney(double money) {
-
-        if (balance >= money && money >= 0){
-            balance -= money;
-            System.out.println("Выдача: " + money);
-        } else
-            throw new IllegalArgumentException("Недостаточно средств");
-
-
+        server.takeMoney(money);
     }
 
     @Override
-    public void depositMoney(double money) {
-        balance += money;
-        System.out.println("Внесено: " + money);
+    public void toDeposit(double money) {
+        server.toDeposit(money);
     }
 
 }

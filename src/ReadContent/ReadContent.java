@@ -1,4 +1,4 @@
-package HomeWork5;
+package ReadContent;
 
 import java.io.*;
 import java.net.MalformedURLException;
